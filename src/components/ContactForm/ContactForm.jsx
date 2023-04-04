@@ -10,9 +10,8 @@ export class ContactForm extends Component {
     const name = form.elements.name.value;
     const number = form.elements.number.value;
     if (this.props.contacts.find(contact => contact.name === name)) {
-      const { name, number } = form.elements;
-      name.value = '';
-      number.value = '';
+      form.elements.name.value = '';
+      form.elements.number.value = '';
       return alert(`${name} is already in contacts`);
     }
     this.props.createContact({
